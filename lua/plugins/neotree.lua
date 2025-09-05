@@ -9,7 +9,7 @@ return {
 		},
 		lazy = false,
 		keys = {
-			{"<leader>e", "<cmd>Neotree toggle float<cr>", desc="Open file explorer"}
+			{ "<leader>e", "<cmd>Neotree toggle right<cr>", desc = "Open file explorer" }
 		},
 	},
 }

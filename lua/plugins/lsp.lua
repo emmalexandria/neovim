@@ -1,6 +1,16 @@
--- Configures plugins for LSP/Formatters/DAPs etc
+-- Configures plugins for LSP/Formatters/DAPs/highlighting etc
 
 return {
+	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
+		lazy = false,
+		build = ":TSUpdate",
+		opts = {
+			highlight = { enable = true },
+			indent = { enable = true }
+		}
+	},
 	{
 		"mason-org/mason.nvim",
 		opts = {},
