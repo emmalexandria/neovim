@@ -24,4 +24,8 @@ end, { desc = "Delete Other Buffers" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 Snacks.toggle.option("conceallevel",
-	{ off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>c")
+	{ off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>uc")
+
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map({ "n", "x" }, "<leader>ca", function() require("tiny-code-action").code_action() end,
+	{ desc = "Code Actions", noremap = true })

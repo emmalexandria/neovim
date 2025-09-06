@@ -2,7 +2,47 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {},
+		opts = {
+			preset = "helix",
+			spec = {
+				{
+					mode = { "n", "v" },
+					{ "<leader><tab>", group = "tabs" },
+					{ "<leader>c", group = "code" },
+					{ "<leader>d", group = "debug" },
+					{ "<leader>dp", group = "profiler" },
+					{ "<leader>f", group = "file/find" },
+					{ "<leader>g", group = "git" },
+					{ "<leader>gh", group = "hunks" },
+					{ "<leader>q", group = "quit/session" },
+					{ "<leader>s", group = "search" },
+					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
+					{ "[", group = "prev" },
+					{ "]", group = "next" },
+					{ "g", group = "goto" },
+					{ "gs", group = "surround" },
+					{ "z", group = "fold" },
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{
+						"<leader>w",
+						group = "windows",
+						proxy = "<c-w>",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					-- better descriptions
+					{ "gx", desc = "Open with system app" },
+				},
+			},
+		},
 		keys = {
 			{
 				"<leader>?",
@@ -56,5 +96,29 @@ return {
 	{
 		"sphamba/smear-cursor.nvim",
 		opts = {}
+	},
+	-- Plugin which provides a UI for LSP code actions
+	{
+		"rachartier/tiny-code-action.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+
+		},
+		event = "LspAttach",
+		opts = {
+			picker = "buffer",
+			signs = {
+				quickfix = { "", { link = "DiagnosticWarning" } },
+				others = { "", { link = "DiagnosticWarning" } },
+				refactor = { "", { link = "DiagnosticInfo" } },
+				["refactor.move"] = { "󰪹", { link = "DiagnosticInfo" } },
+				["refactor.extract"] = { "", { link = "DiagnosticError" } },
+				["source.organizeImports"] = { "", { link = "DiagnosticWarning" } },
+				["source.fixAll"] = { "󰃢", { link = "DiagnosticError" } },
+				["source"] = { "", { link = "DiagnosticError" } },
+				["rename"] = { "󰑕", { link = "DiagnosticWarning" } },
+				["codeAction"] = { "", { link = "DiagnosticWarning" } },
+			},
+		},
 	}
 }
