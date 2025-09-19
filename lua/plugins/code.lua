@@ -7,8 +7,7 @@ return {
 		},
 		event = "LspAttach",
 		opts = {
-			backend = "vim",
-			picker = "telescope",
+			picker = "buffer",
 			signs = {
 				quickfix = { "", { link = "DiagnosticWarning" } },
 				others = { "", { link = "DiagnosticWarning" } },
