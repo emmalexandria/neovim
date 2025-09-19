@@ -56,6 +56,7 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			-- Configure nvim-notify with top_down = false so that notifications don't interfere with our view of our file explorer
 			{ "rcarriga/nvim-notify", opts = { top_down = false } },
 		},
 		opts = {

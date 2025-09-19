@@ -4,6 +4,9 @@ return {
 	lazy = false,
 	-- @type snacks.Config
 	opts = {
+		scroll = {
+			enabled = true
+		},
 		toggle = {
 			enabled = true
 		},
