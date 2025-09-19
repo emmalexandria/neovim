@@ -7,6 +7,9 @@ return {
 		toggle = {
 			enabled = true
 		},
+		indent = {
+			enabled = true
+		},
 		bufdelete = {
 			enabled = true,
 		},

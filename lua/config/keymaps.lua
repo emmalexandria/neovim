@@ -29,3 +29,5 @@ Snacks.toggle.option("conceallevel",
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map({ "n", "x" }, "<leader>ca", function() require("tiny-code-action").code_action() end,
 	{ desc = "Code Actions", noremap = true })
+
+map("n", "<leader>W", function() require("which-key").show() end, { desc = "Open whichkey", noremap = true })

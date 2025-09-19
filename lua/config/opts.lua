@@ -19,3 +19,9 @@ vim.opt.undofile = true
 
 -- Keep status line at bottom and full width
 vim.o.laststatus = 3
+
+-- Enable inline diagnostic text
+vim.diagnostic.config({
+	virtual_text = true,
+	underline = true,
+})
